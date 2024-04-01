@@ -2,3 +2,4 @@
 - Diego Canals
 - John Peregoy
 - Steven Price
+- Emily Schalk
