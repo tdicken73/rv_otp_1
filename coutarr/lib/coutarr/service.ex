@@ -6,6 +6,18 @@ defmodule Coutarr.Service do
     spawn_link(fn -> loop(count) end)
   end
 
+  def increment(pid) do
+    send(pid, :inc)
+  end
+
+  def decrement(pid) do
+    send(pid, :dec)
+  end
+
+  def show(pid, from_pid) do
+    send(pid, {:show, from_pid})
+  end
+
   def loop(count) do
     count
     |> listen()
@@ -16,12 +28,13 @@ defmodule Coutarr.Service do
     receive do
       :inc ->
         MapCount.increment(count)
+
       :dec ->
         MapCount.decrement(count)
+
       {:show, from_pid} ->
         send(from_pid, MapCount.show(count))
         count
     end
-
   end
 end
