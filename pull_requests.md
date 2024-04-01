@@ -1,3 +1,4 @@
 - Bruce Tate
 - Diego Canals
+- John Peregoy
 - Steven Price
