@@ -1,2 +1,3 @@
 - Bruce Tate
 - Diego Canals
+- Steven Price
